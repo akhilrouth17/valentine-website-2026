@@ -317,37 +317,36 @@ h2 {
     background: var(--secondary-color);
 } 
 
-/* === SOFT BACKGROUND IMAGE === */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+.bg-image {
+    position: absolute;
+    inset: 0;
 
     background-image: url("US.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 
-    opacity: 0.18;
+    opacity: 0.14;
     pointer-events: none;
 
-    z-index: -1;
+    z-index: 0;
 
-    animation: softFloatBg 26s ease-in-out infinite;
+    animation: bgFloatSoft 28s ease-in-out infinite;
 }
 
-/* keep all content above */
-body {
+/* ensure content stays above it */
+.main-container,
+.container,
+.content {
     position: relative;
+    z-index: 1;
 }
 
-@keyframes softFloatBg {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-10px); }
+@keyframes bgFloatSoft {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
     100% { transform: translateY(0); }
 }
+
 
 
