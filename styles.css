@@ -317,36 +317,7 @@ h2 {
     background: var(--secondary-color);
 } 
 
-.bg-image {
-    position: absolute;
-    inset: 0;
 
-    background-image: url("US.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-
-    opacity: 0.14;
-    pointer-events: none;
-
-    z-index: 0;
-
-    animation: bgFloatSoft 28s ease-in-out infinite;
-}
-
-/* ensure content stays above it */
-.main-container,
-.container,
-.content {
-    position: relative;
-    z-index: 1;
-}
-
-@keyframes bgFloatSoft {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0); }
-}
 
 
 
