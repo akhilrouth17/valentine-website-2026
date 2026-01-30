@@ -317,32 +317,37 @@ h2 {
     background: var(--secondary-color);
 } 
 
-#soft-bg {
+/* === SOFT BACKGROUND IMAGE === */
+body::before {
+    content: "";
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 
     background-image: url("US.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 
-    opacity: 0.16;
+    opacity: 0.18;
     pointer-events: none;
 
-    z-index: 0;
+    z-index: -1;
 
-    animation: softBgFloat 22s ease-in-out infinite;
+    animation: softFloatBg 26s ease-in-out infinite;
 }
 
-@keyframes softBgFloat {
+/* keep all content above */
+body {
+    position: relative;
+}
+
+@keyframes softFloatBg {
     0%   { transform: translateY(0); }
     50%  { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
 
-/* keep all site content above the background */
-body > *:not(#soft-bg) {
-    position: relative;
-    z-index: 2;
-}
 
