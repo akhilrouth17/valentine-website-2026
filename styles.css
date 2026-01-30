@@ -316,3 +316,33 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+
+#soft-bg {
+    position: fixed;
+    inset: 0;
+
+    background-image: url("US.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 0.16;
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: softBgFloat 22s ease-in-out infinite;
+}
+
+@keyframes softBgFloat {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* keep all site content above the background */
+body > *:not(#soft-bg) {
+    position: relative;
+    z-index: 2;
+}
+
